@@ -1,4 +1,4 @@
-// src/domain/registro/application/use-cases/RegisterUserUseCase.ts
+
 import User from '../../enterprise/entities/User';
 import KafkaProducer from '../../../../infrastructure/kafka/KafkaProducer';
 import UserRepository from '../../enterprise/repositories/UserRepository';
@@ -27,7 +27,6 @@ export default class RegisterUserUseCase {
             throw new Error('User not created');
         }
 
-        // Enviar mensagem ao Kafka
         await this.kafkaProducer.connect();
         const notificationMessage = {
             id: savedUser.id,

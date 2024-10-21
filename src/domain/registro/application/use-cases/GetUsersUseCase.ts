@@ -1,4 +1,4 @@
-// src/domain/registro/application/use-cases/RegisterUserUseCase.ts
+
 import User from '../../enterprise/entities/User';
 import UserRepository from '../../enterprise/repositories/UserRepository';
 

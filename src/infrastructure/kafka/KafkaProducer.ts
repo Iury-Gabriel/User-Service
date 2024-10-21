@@ -8,7 +8,7 @@ export default class KafkaProducer {
     constructor() {
         this.kafka = new Kafka({
             clientId: 'user-service',
-            brokers: ['localhost:9092'], // Endereço do broker Kafka
+            brokers: ['localhost:9092'], 
         });
         this.producer = this.kafka.producer();
     }

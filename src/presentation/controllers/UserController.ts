@@ -1,4 +1,4 @@
-// src/presentation/controllers/UserController.ts
+
 import { Request, Response } from 'express';
 import RegisterUserUseCase from '../../domain/registro/application/use-cases/RegisterUserUseCase';
 import GetUsersUseCase from '../../domain/registro/application/use-cases/GetUsersUseCase';

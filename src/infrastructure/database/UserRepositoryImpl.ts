@@ -30,15 +30,14 @@ export default class UserRepositoryImpl extends UserRepository {
         };
     }
 
-    async getAll(): Promise<Omit<User, 'password'>[] | undefined> { // Atualizando o tipo de retorno
+    async getAll(): Promise<Omit<User, 'password'>[] | undefined> { 
         const users = await this.prisma.user.findMany();
         
-        // Retorna um array de usuários sem a senha
         return users.map((user) => ({
             id: user.id,
             name: user.name,
             email: user.email,
-            createdAt: user.createdAt, // Presumindo que você tem essa propriedade
+            createdAt: user.createdAt, 
         }));
     }
     
@@ -57,7 +56,7 @@ export default class UserRepositoryImpl extends UserRepository {
         return user ? new User(user.id, user.name, user.email, user.password) : undefined;
     }
 
-    async deleteUser(id: string): Promise<Omit<User, 'password'> | undefined> { // Omit para excluir a senha
+    async deleteUser(id: string): Promise<Omit<User, 'password'> | undefined> { 
         const deletedUser = await this.prisma.user.delete({
             where: { id },
             select: { id: true, name: true, email: true, createdAt: true }
