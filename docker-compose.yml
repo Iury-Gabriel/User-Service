@@ -22,8 +22,8 @@ services:
   postgres:
     image: postgres:14
     environment:
-      POSTGRES_USER: prince
-      POSTGRES_PASSWORD: prince123
-      POSTGRES_DB: kafkaprince
+      POSTGRES_USER: prince1
+      POSTGRES_PASSWORD: prince1
+      POSTGRES_DB: kafka
     ports:
       - "5432:5432"
